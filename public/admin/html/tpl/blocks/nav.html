@@ -57,12 +57,45 @@
       <span class="font-bold">뉴스</span>
     </a>
   </li> -->
-  <li ui-sref-active="active">
-    <a ui-sref="app.product.list">
-      <i class="icon-list"></i>
+  
+  <li>
+    <a href class="auto">      
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <i class=" icon-note"></i>
       <span class="font-bold">상품관리</span>
     </a>
+    <ul class="nav nav-sub dk">
+    
+      <li class="nav-sub-header">
+        <a href>
+          <span>상품관리</span>
+        </a>
+      </li>
+      <!-- 
+      <li ui-sref-active="active">
+        <a ui-sref="app.board.list({boardId : 'event'})">
+          <span>이벤트</span>
+        </a>
+      </li>
+      -->
+      <li ui-sref-active="active">
+        <a ui-sref="app.product.list">
+          <!-- <b class="label bg-info pull-right">N</b> -->
+          <span>상품 관리</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.category.list">
+          <!-- <b class="label bg-info pull-right">N</b> -->
+          <span>카테고리 관리</span>
+        </a>
+      </li>
+    </ul>
   </li>
+  
   <li ui-sref-active="active">
     <a ui-sref="app.order.list">
       <!-- <i class="glyphicon glyphicon-usd icon text-success"></i> -->

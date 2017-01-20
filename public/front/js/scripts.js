@@ -1,3 +1,111 @@
+//popup
+window.onload = function(){
+    $('.pop1').css({
+        left:'50%',
+        marginLeft:function(){
+            var aa = $(this).css('width');
+            return -parseInt(aa) -20 + 'px';
+        },
+         top:0,
+         marginTop:function(){
+             var aa = $(this).css('height');
+             return parseInt(aa)/2 + 'px';
+
+         }
+    })
+    $('.pop2').css({
+        left:'50%',
+         top:0,
+         marginTop:function(){
+             var aa = $(this).css('height');
+             return parseInt(aa)/2 + 'px';
+
+         }
+    })
+}
+$(document).ready(function(){
+
+  //쿠키 가져오기
+    function getCookie( name ) {
+       var nameOfCookie = name + "=";
+       var x = 0;
+       while ( x <= document.cookie.length )
+       {
+           var y = (x+nameOfCookie.length);
+           if ( document.cookie.substring( x, y ) == nameOfCookie ) {
+               if ( (endOfCookie=document.cookie.indexOf( ";", y )) == -1 )
+                   endOfCookie = document.cookie.length;
+               return unescape( document.cookie.substring( y, endOfCookie ) );
+           }
+           x = document.cookie.indexOf( " ", x ) + 1;
+           if ( x == 0 )
+               break;
+       }
+       return "";
+    }
+    // 24시간 기준 쿠키 설정하기
+    function setCookie( name, value, expiredays ) {
+       var todayDate = new Date();
+       todayDate.setDate( todayDate.getDate() + expiredays );
+       document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+       console.log('aa')
+    }
+
+    function cookieFn(target,cookieName){
+      //쿠키설정
+        //팝업 열기
+        function openWin( winName ) {
+          console.log("openWin");
+           var blnCookie    = getCookie( winName );
+           if( !blnCookie ) {
+             target.css({
+                'display':'block'
+              });
+           }
+        }
+        openWin(cookieName);
+    }
+
+    cookieFn($('.pop1'),'oberrygood1');
+    cookieFn($('.pop2'),'oberrygood2');
+
+
+
+  $('#pop_1_today').on("click",function(){
+    setCookie("oberrygood1", "done", 1);
+    $('#open_pop').children('.pop1').css({
+      'display':'none'
+    });
+  });
+  $('#pop_2_today').on("click",function(){
+    setCookie("oberrygood2", "done", 1);
+    $('#open_pop').children('.pop2').css({
+      'display':'none'
+    });
+  });
+
+  $('#pop_1_close').on("click",function(){
+    $('#open_pop').children('.pop1').css({
+      'display':'none'
+    });
+  });
+
+  $('#pop_2_close').on("click",function(){
+    $('#open_pop').children('.pop2').css({
+      'display':'none'
+    });
+  });
+
+})
+
+
+
+
+
+
+
+
+
 // Page preload ------------------
 $(window).load(function() {
     "use strict";
@@ -13,18 +121,18 @@ function initLambert() {
     if ($("header").hasClass("flat-header")) $('<div clas="height-emulator"></div>').prependTo("#wrapper").css({
         height: $("header").outerHeight(true)
     });
-    function a() {
-        $(".hero-title").css({
-            "margin-top": -1 * $(".hero-title").height() / 2 + "px"
-        });
-        $(".carousel-link-holder").css({
-            "margin-top": -1 * $(".carousel-link-holder").height() / 2 + "px"
-        });
-        $(".full-height").css({
-            height: $(window).outerHeight(true)
-        });
-    }
-    a();
+    // function a() {
+    //     $(".hero-title").css({
+    //         "margin-top": -1 * $(".hero-title").height() / 2 + "px"
+    //     });
+    //     $(".carousel-link-holder").css({
+    //         "margin-top": -1 * $(".carousel-link-holder").height() / 2 + "px"
+    //     });
+    //     $(".full-height").css({
+    //         height: $(window).outerHeight(true)
+    //     });
+    // }
+    // a();
 	// magnificPopup------------------
     $(".image-popup").magnificPopup({
         type: "image",
@@ -597,9 +705,9 @@ function initLambert() {
     o.on("click", function() {
         if ($(this).hasClass("vis-m")) r(); else s();
     });
-    $(window).resize(function() {
-        a();
-    });
+    // $(window).resize(function() {
+    //     a();
+    // });
 	$(".scroll-nav a").on("click",function(){
 	var ww = $(window).width();
 		if (ww < 1036) {

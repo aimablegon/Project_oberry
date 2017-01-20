@@ -5,6 +5,7 @@ angular.module('app').controller('myCtrl', ['$scope', '$rootScope', '$http', '$s
 	function($scope, $rootScope, $http, $sce, $stateParams, $location) {
 		
 		$scope.searchText	= $stateParams.searchText;
+		$scope.categoryId	= parseInt($stateParams.categoryId);
 		$scope.pageSize = $rootScope.pageSize ? $rootScope.pageSize : "10";
 		$scope.Math=Math;
 
@@ -15,20 +16,29 @@ angular.module('app').controller('myCtrl', ['$scope', '$rootScope', '$http', '$s
 				data : {
 					page : $stateParams.page,
 					pageSize : $scope.pageSize,
-					searchText : $stateParams.searchText
+					searchText : $stateParams.searchText,
+					categoryId : $stateParams.categoryId
 				}
 			}).success(function(data) {
 				console.log(data);
 				$scope.data = data;
 			});
 		};
+		
+		$http({
+			method : "POST",
+			url : "/admin/api/category"
+		}).success(function(data) {
+			console.log(data);
+			$scope.categorys = data.list;
+		});
 
 		$scope.pageChanged = function (idx){
-			$location.path('/app/product/list').search({page: $scope.data.currentPage,searchText: $scope.searchText});
+			$location.path('/app/product/list').search({page: $scope.data.currentPage,searchText: $scope.searchText, categoryId : $scope.categoryId});
 		};
 
 		$scope.search = function () {
-			$location.path('/app/product/list').search({searchText: $scope.searchText});
+			$location.path('/app/product/list').search({searchText: $scope.searchText, categoryId : $scope.categoryId});
 		}
 
 		$scope.pageSizeChanged = function () {
@@ -46,7 +56,17 @@ angular.module('app').controller('myCtrl', ['$scope', '$rootScope', '$http', '$s
 <div class="panel panel-default" ng-controller="myCtrl" ng-init="loadData()">
 	<div class="panel-heading">상품목록</div>
 	<div class="row wrapper">
-		<div class="col-sm-12">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pull-left">
+			<div class="input-group">
+				<select class="input-sm form-control w-sm inline v-middle" style="min-width:200px;"
+					ng-options="category.categoryId as category.categoryName for category in categorys" 
+					ng-selected="categoryId == category.categoryId" 
+					ng-model="categoryId">
+					<option value="">전체</option>
+				</select>
+			</div>
+		</div>
+		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 pull-right">
 			<div class="input-group">
 				<input type="text" class="input-sm form-control" ng-model="searchText"
 					placeholder="검색어를 입력하세요."> <span class="input-group-btn">

@@ -1,18 +1,93 @@
 {% extends "./blocks/layout.html" %}
 {% block content %}
 
+                    <!--============== main_popup ===============-->
+                    <div id="open_pop">
+                      <div class="main_popup pop1">
+                          <div class="popup_img">
+                            <img src="images/popup/pop_1.jpg" alt="pop_1" usemap='#pop_1' />
+                            <map id="pop_1" name="pop_1">
+                      				<area id="pop_1_today" shape="rect" coords="225, 410, 350, 450" href="#" alt=""/>
+                      				<area id="pop_1_close" shape="rect" coords="300, 0, 350, 50" href="#" alt="" />
+                              <area id="pop_1_view" shape="rect" coords="114, 308, 238, 335" href="http://oberrygood.co.kr/front/product.html?productId=28" alt="" />
+                      			</map>
+                          </div>
+                      </div>
+                      <div class="main_popup pop2">
+                          <div class="popup_img">
+                            <img src="images/popup/pop_2.jpg" alt="pop_2" usemap='#pop_2' />
+                            <map id="pop_2" name="pop_2">
+                      				<area id="pop_2_today" shape="rect" coords="225, 410, 350, 450" href="#" alt=""/>
+                      				<area id="pop_2_close" shape="rect" coords="300, 0, 350, 50" href="#" alt="" />
+                              <area id="pop_2_view" shape="rect" coords="114, 375, 236, 402" href="http://oberrygood.co.kr/front/product.html?productId=27" alt="" />
+                      			</map>
+                          </div>
+                      </div>
+                    </div>
+                    <!-- main_popup end -->
+
                 <!--=============== Hero content ===============-->
                 <div class="content full-height hero-content">
                     <div class="slideshow-container" data-top-bottom="transform: translateY(300px);" data-bottom-top="transform: translateY(-300px);">
                         <!-- slideshow -->
                         <div class="slides-container">
                             <!-- 1 -->
-                            <div class="bg" style="background-image: url(images/bg/slide_2.jpg)"></div>
+                            <div class="bg" style="background-image: url(images/bg/slide_2.jpg)">
+                              <div class="hero-title-holder" style="margin-top:-60px;">
+                                  <div class="overlay" style="margin-top:60px;"></div>
+                                  <div class="hero-title">
+                                      <div class="hero-decor b-dec">
+                                          <div class="half-circle"></div>
+                                      </div>
+                                      <div class="separator color-separator"></div>
+                                      <!-- <h3><span style="font-weight:100">프렌차이즈 문의</span><br/>1670-8797</h3>
+                                      <h4>오베리굿에서 프렌차이즈를 시작하세요</h4> -->
+                                      <h3><span style="font-weight:100">오늘 하루도</span><br/>O Berry Good</h3>
+                                      <h4>자연에서 찾은 친환경 블루베리</h4>
+                                  </div>
+                              </div>
+                            </div>
                             <!-- 2 -->
-                            <div class="bg" style="background-image: url(images/bg/slide_1.jpg)"></div>
+                            <div class="bg" style="background-image: url(images/bg/slide_1.jpg)">
+                              <div class="hero-title-holder" style="margin-top:-60px;">
+                                  <div class="overlay" style="margin-top:60px;"></div>
+                                  <div class="hero-title">
+                                      <div class="hero-decor b-dec">
+                                          <div class="half-circle"></div>
+                                      </div>
+                                      <div class="separator color-separator"></div>
+                                      <h3><span style="font-weight:100">오늘 하루도</span><br/>O Berry Good</h3>
+                                      <h4>자연에서 찾은 친환경 블루베리</h4>
+                                  </div>
+                              </div>
+                            </div>
                             <!-- 3 -->
-                            <div class="bg" style="background-image: url(images/bg/slide_3.jpg)"></div>
+                            <div class="bg" style="background-image: url(images/bg/slide_3.jpg)">
+                              <div class="hero-title-holder" style="margin-top:-60px;">
+                                    <div class="overlay" style="margin-top:60px;"></div>
+                                    <div class="hero-title">
+                                        <div class="hero-decor b-dec">
+                                            <div class="half-circle"></div>
+                                        </div>
+                                        <div class="separator color-separator"></div>
+                                        <!-- <h3><span style="font-weight:100">블루베리 식빵</span><br/>O Berry Good</h3>
+                                        <h4>오베리굿의 새로운 신제품</h4> -->
+                                        <h3><span style="font-weight:100">오늘 하루도</span><br/>O Berry Good</h3>
+                                        <h4>자연에서 찾은 친환경 블루베리</h4>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+                      <!-- slideshow -->
+                        <!-- <div class="slides-container"> -->
+                            <!-- 1 -->
+                            <!-- <div class="bg" style="background-image: url(images/bg/slide_2.jpg)"></div> -->
+                            <!-- 2 -->
+                            <!-- <div class="bg" style="background-image: url(images/bg/slide_1.jpg)"></div> -->
+                            <!-- 3 -->
+                            <!-- <div class="bg" style="background-image: url(images/bg/slide_3.jpg)"></div> -->
+                        <!-- </div>
                         </div>
                         <div class="hero-title-holder">
                             <div class="overlay"></div>
@@ -24,7 +99,7 @@
                                 <h3><span style="font-weight:100">오늘 하루도</span><br/>O Berry Good</h3>
                                 <h4>자연에서 찾은 친환경 블루베리</h4>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="hero-link">
                             <a class="custom-scroll-link" href="#sec1"><i class="fa fa-angle-double-down"></i></a>
                         </div>
@@ -45,7 +120,7 @@
                                     <p style="font-size:24px; color:#C59D5F; line-height:130%;font-weight:300">신선한 블루베리로 만든 고급 빙수 그리고 음료와 차를 즐길 수 있는 프리미엄 디저트 카페입니다.</p>
                                     <p style="font-weight:300"> 자연에서 찾은 신선한 국내산 블루베리를 맛볼 수 있는 국내 유일의 블루베리 디저트 카페 오베리굿에서 소중한 인연을 만들어보세요.
                                         오베리굿은 언제나 신선한 친환경 블루베리를 직접 재배합니다. 진짜 국내산 블루베리의 맛을 느껴보시길 바랍니다.</p>
-                                    <a href="brandstory.html" class="link ajax" style="font-weight:300">오베리굿 스토리</a>
+                                    <a href="brandstory.html" class="link ajax link_main" >스토리 바로가기</a>
                                 </div>
                                 <!-- about images-->
                                 <div class="col-md-6">
@@ -238,7 +313,7 @@
                                     <p style="font-size:24px; color:#C59D5F; line-height:130%;"> 직접 재배하여 만든 블루베리 전문 카페 오베리굿!</p>
                                     <p>저희는 경영인으로 불리기를 원치 않으며, 오직 정직과 신뢰로서 농장에서 직접 친환경으로 재배한 블루베리를 고집합니다.
                                         대중의 건강을 우선으로 생각하는 블루베리 전문 카페 오베리굿을 만나보세요.</p>
-                                    <a href="gallery.html" class="link">포토갤러리 바로가기</a>
+                                    <a href="gallery.html" class="link link_main">포토갤러리 바로가기</a>
                                 </div>
                             </div>
                         </div>

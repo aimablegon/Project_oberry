@@ -146,7 +146,7 @@ angular.module('app')
                   templateUrl: 'tpl/page_product.html'
               })
                 .state('app.product.list', {
-                    url: '/list?page&searchText',
+                    url: '/list?page&searchText&categoryId',
                     templateUrl: 'tpl/page_product_list.html'
                 })
                 .state('app.product.detail', {
@@ -157,6 +157,25 @@ angular.module('app')
                     url: '/detail',
                     templateUrl: 'tpl/page_product_detail.html'
                 })
+                
+              .state('app.category', {
+                  abstract: true,
+                  url: '/category',
+                  templateUrl: 'tpl/page_category.html'
+              })
+                .state('app.category.list', {
+                    url: '/list?page&searchText',
+                    templateUrl: 'tpl/page_category_list.html'
+                })
+                .state('app.category.detail', {
+                    url: '/detail/:categoryId',
+                    templateUrl: 'tpl/page_category_detail.html'
+                })
+                .state('app.category.write', {
+                    url: '/detail',
+                    templateUrl: 'tpl/page_category_detail.html'
+                })
+                
               .state('app.order', {
                   abstract: true,
                   url: '/order',

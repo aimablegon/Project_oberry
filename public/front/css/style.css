@@ -496,6 +496,13 @@ section.header-section {
 .align-link:hover {
 	color:#fff;
 }
+.link_main{
+	color:#9f5837 !important;
+	font-weight: 500;
+}
+.link_main:hover{
+	color:#000 !important;
+}
 .section-icon {
 	width:60px;
 	height:60px;
@@ -592,6 +599,14 @@ header.sticky .header-inner:before , header.flat-header .header-inner:before {
 header.sticky .header-inner {
 	top:-40px;
 	padding:25px 0;
+}
+
+.main_popup{
+		position: absolute;
+		z-index: 100 !important;
+		width: 350px;
+		height: 450px;
+		display: none;
 }
 
 /*------ Navigation  ------------------------------------------------*/
@@ -1337,7 +1352,17 @@ article {
 .team-item  a:hover .team-details {
 	opacity:1;
 }
-
+.shop_nav{
+	margin-top:15px;
+}
+.shop_nav_div{
+	display:inline-block;
+}
+.shop_nav_div nav ul li{
+	float:none;
+	display:inline-block;
+ 	vertical-align: top;
+}
 /*------ story------------------------------------------------*/
 .history-section .container .row p{
 	font-size: 26px;
@@ -1400,6 +1425,9 @@ article {
 	width: 10%;
 	line-height:15px;
 	text-align:left;
+}
+.menu-item-desc img{
+	display: none;
 }
 .menu-item-dot {
 	display: table-cell;
@@ -3932,6 +3960,12 @@ nav li:hover > ul {
 .join_info_box_d{
 	width: 41%;
 }
+.shop_nav_div nav ul li{
+	float:none;
+	display:inline-block;
+	width: 75%;
+}
+
 }
 @media only screen and  (max-width: 991px) {
 .cross_text_1{
@@ -4186,6 +4220,11 @@ nav li:last-child {
  .franchise_ymd {
 	width:80%
 }
+.shop_nav_div nav ul li {
+    float: none;
+    display: inline-block;
+    width: 55%;
+}
 }
 @media only screen and  (max-width: 400px) {
 	.notice_table{
@@ -4222,7 +4261,11 @@ nav li:last-child {
 		position: absolute;
 		top: -86px;
 	}
-
+	.shop_nav_div nav ul li {
+	    float: none;
+	    display: inline-block;
+	    width: 65%;
+	}
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
 .bg {
