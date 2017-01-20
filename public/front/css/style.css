@@ -601,13 +601,22 @@ header.sticky .header-inner {
 	padding:25px 0;
 }
 
-.main_popup{
+.main_popup_1{
 		position: absolute;
 		z-index: 100 !important;
 		width: 350px;
 		height: 450px;
 		display: none;
 }
+.main_popup_2{
+		position: absolute;
+		z-index: 100 !important;
+		width: 320px;
+		height: 450px;
+		display: none;
+}
+
+
 
 /*------ Navigation  ------------------------------------------------*/
 .nav-holder {

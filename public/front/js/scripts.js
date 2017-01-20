@@ -22,6 +22,26 @@ window.onload = function(){
 
          }
     })
+    $('.pop3').css({
+        left:'50%',
+        marginLeft:function(){
+            var aa = $(this).css('width');
+            return -parseInt(aa)/2 + 'px';
+        },
+        top:'120px'
+    })
+    $('.pop4').css({
+        left:'50%',
+        marginLeft:function(){
+            var aa = $(this).css('width');
+            return -parseInt(aa)/2 + 'px';
+        },
+        top:function(){
+             var aa = $(this).css('height');
+             return parseInt(aa) + 70 + 'px';
+
+         }
+    })
 }
 $(document).ready(function(){
 
@@ -66,8 +86,20 @@ $(document).ready(function(){
         openWin(cookieName);
     }
 
-    cookieFn($('.pop1'),'oberrygood1');
-    cookieFn($('.pop2'),'oberrygood2');
+    var filter = "win16|win32|win64|mac";
+    if(navigator.platform){
+        if(0 > filter.indexOf(navigator.platform.toLowerCase())){
+          //mobile
+          cookieFn($('.pop3'),'oberrygood3');
+          cookieFn($('.pop4'),'oberrygood4');
+        }else{
+          cookieFn($('.pop1'),'oberrygood1');
+          cookieFn($('.pop2'),'oberrygood2');
+
+
+        }
+
+    }
 
 
 
@@ -95,9 +127,32 @@ $(document).ready(function(){
       'display':'none'
     });
   });
+  $('#pop_3_today').on("click",function(){
+    setCookie("oberrygood3", "done", 1);
+    $('#open_pop').children('.pop3').css({
+      'display':'none'
+    });
+  });
+  $('#pop_4_today').on("click",function(){
+    setCookie("oberrygood4", "done", 1);
+    $('#open_pop').children('.pop4').css({
+      'display':'none'
+    });
+  });
+
+  $('#pop_3_close').on("click",function(){
+    $('#open_pop').children('.pop3').css({
+      'display':'none'
+    });
+  });
+
+  $('#pop_4_close').on("click",function(){
+    $('#open_pop').children('.pop4').css({
+      'display':'none'
+    });
+  });
 
 })
-
 
 
 
